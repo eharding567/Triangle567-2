@@ -1,0 +1,18 @@
+language: python
+python:
+ - "2.7"
+
+dist: trusty
+sudo: required
+
+addons:
+ sonarcloud:
+ organization: "team4-ssw567-triangle567X"
+ token: b12699d16bebc01ef68db60951b54674de56b104
+ branches:
+ - sonarcloud
+
+# add the sonar-scanner command after all the other commands that you already have
+script:
+ - python -m unittest TestTriangle
+ - sonar-scanner
